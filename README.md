@@ -8,7 +8,7 @@ ReadMe Notes
 
 Use case scenario: 
 
-Managers in the corporate real estate organization at a large company want to know the extent to which facilities-related topics are on the minds of employees when the employees talk about the company, e.g., on Glassdoor.
+Managers in the corporate real estate (CRE) organization at a large company want to know the extent to which facilities-related topics are on the minds of employees when the employees talk about the company, e.g., on Glassdoor.
 
 In this case, we use as the source text several hundred comments made on Glassdoor about the company Cisco Systems.  The comments (employee reviews) were captured via RSS feed over a period of some months.
 
