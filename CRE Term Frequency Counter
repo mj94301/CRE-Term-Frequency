@@ -1,0 +1,39 @@
+# The purpose of this script is to count the occurences of a 
+# specific list of words as the appear in a text block file.  
+
+import csv # so we can store the results in a csv file
+import re # to count the occurrences of n-grams
+
+word_list_file = "C:/Users/micha/OneDrive/OneDrive Documents/Python Testing/CRE_Named_Entities.txt"  # File containing the predetermined list of words
+text_file = "C:/Users/micha/OneDrive/OneDrive Documents/Python Testing/Glassdoor_Comments.txt"  # File containing the unstructured text
+output_file = "C:/Users/micha/OneDrive/OneDrive Documents/Python Testing/Output_count_of_CRE_terms.csv"  # CSV file to store the results
+
+# Read the unstructured text from the file and store it in a string called 'text'
+with open(text_file, "r") as f:
+    text = f.read()
+
+# Read the predetermined list of words and n-grams from the file and store them in a list called 'word_list'
+with open(word_list_file, "r") as f:
+    word_list = [line.strip() for line in f]
+
+# Split the text into words using whitespace as a delimiter
+words = text.split()
+
+# Count how many times each word and n-gram from 'word_list' occurs in the text
+word_counts = {}
+for item in word_list:
+    if " " in item:
+        # If the item contains a space, it's an n-gram
+        ngram_regex = re.compile(re.escape(item))
+        count = len(ngram_regex.findall(text))
+    else:
+        # Otherwise, it's a single word
+        count = words.count(item)
+    word_counts[item] = count
+
+# Write the results to a CSV file
+with open(output_file, "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["Item", "Count"])
+    for item, count in word_counts.items():
+        writer.writerow([item, count])
