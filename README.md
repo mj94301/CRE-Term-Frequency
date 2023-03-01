@@ -21,10 +21,22 @@ Files:
 
 2.  CRE_Named_Entities.txt is the file with the list of terms related to how employees see the results of decisions made by the company's corporate real estate organization, e.g., about amenities, facilities features, location, and programs.
 
-3.  CRE Term Frequency Counter.py is the python script for completing the count.  This script, when run, creates an output file called Output_count_of_CRE_terms.csv.
+3.  CRE Term Frequency Counter.py is the python script for completing the count.  This script, when run, creates an output file called Output_count_of_CRE_terms.csv.  This python script was written by the Chat GPT AI (chat.openai.com).  The original instruction, responses, and updated instructions are listed below.
 
 4.  Output_count_of_CRE_terms.csv is the output created by the script.
 
 5.  CRE Terms Frequency Overview.twbx is a Tableau file that visualizes the results of the count.
 
 6.  CRE Terms Category Source.xlsx is a file that categorizes the individual terms under one of 5 types of decisions that are typically made by CRE departments:  Facility Features, Location, Programs, Services / Amenities, Technology
+
+
+
+Instructions and Responses from Chat GPT AI used to write the Python code.
+
+Original Instruction:  write a python script to calculate and store word frequencies from a csv file
+Updates to instructions made to make the script fit the overall vision:
+   use a txt file instead of a csv file
+   store the results in a new csv file
+   omit stop words
+   use nltk to remove numbers as well
+   what if the text data includes 2-word phrases we want to count as 1?
